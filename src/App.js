@@ -75,11 +75,12 @@ const App = () => (
   <Router>
     <AppStyles>
       <Head
-        htmlAttributes={{lang: "en"}}
+        htmlAttributes={{lang: "en", prefix: "og: http://ogp.me/ns#"}}
         titleTemplate="%s | Ryoji Hayasaka Portfolio"
         meta={[
           {name: "twitter:card", content: "summary"},
-          {name: "twitter:site", content: "@r_hayakasa"}
+          {name: "twitter:site", content: "@r_hayakasa"},
+          {property: "fb:app_id", content: "551655515340796"}
         ]}
       />
       <nav>
