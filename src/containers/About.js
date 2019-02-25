@@ -7,6 +7,10 @@ const AboutStyles = styled.div`
     max-width: 300px;
     width: 50%;
   }
+  
+  ul {
+    padding-left: 1.1rem;
+  }
 `
 export default () => (
   <AboutStyles>
