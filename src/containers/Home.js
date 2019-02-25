@@ -26,7 +26,8 @@ export default withRouteData(({ collections }) => (
       title="home"
       meta={[
         {name: "description", content: `it's my portfolio website. you can see photographs i took`},
-        {/*{property: "og:type", content: "article"}*/}
+        {property: "og:url", content: "https://hyks.jp"},
+        {property: "og:type", content: "website"}
       ]}
     />
     {collections.map(item => (
@@ -37,6 +38,8 @@ export default withRouteData(({ collections }) => (
         <img
           src={item.cover_photo.urls.regular}
           alt={`${item.title} cover photo`}
+          width={item.cover_photo.width}
+          height={item.cover_photo.height}
         />
         <h2>{item.title}</h2>
       </Link>

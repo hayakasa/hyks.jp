@@ -20,13 +20,14 @@ const CollectionStyles = styled.div`
   }
 `;
 
-export default withRouteData(({ title, collection }) => (
+export default withRouteData(({ id, title, collection }) => (
   <CollectionStyles>
     <Head
       title={title}
       meta={[
         {name: "description", content: `it's a collection of ${title} photographs i took.`},
-        {/*{property: "og:type", content: "article"}*/}
+        {property: "og:url", content: `https://hyks.jp/collection/${id}`},
+        {property: "og:type", content: "article"}
       ]}
     />
     <h1>{title}</h1>
@@ -38,6 +39,8 @@ export default withRouteData(({ title, collection }) => (
         <img
           src={photo.urls.regular}
           alt={photo.description}
+          width={photo.width}
+          height={photo.height}
         />
       </Link>
     ))}

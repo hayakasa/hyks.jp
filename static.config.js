@@ -21,6 +21,7 @@ export default {
           path: `/collection/${item.id}`,
           component: 'src/containers/Collection',
           getData: () => ({
+            id: item.id,
             title: item.title,
             collection: require(`./public/collection_${item.id}.json`),
           }),
