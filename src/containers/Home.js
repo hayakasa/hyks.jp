@@ -33,7 +33,7 @@ export default withRouteData(({ collections }) => (
     {collections.map(item => (
       <Link
         key={item.id}
-        to={`/collection/${item.id}`}
+        to={`/collection/${item.id}/`}
       >
         <img
           src={item.cover_photo.urls.regular}

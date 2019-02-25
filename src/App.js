@@ -85,7 +85,7 @@ const App = () => (
       <nav>
         <span className="site-title">Ryoji Hayasaka</span>
         <Link exact to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/about/">About</Link>
       </nav>
       <main className="content">
         <Routes />
