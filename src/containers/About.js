@@ -29,7 +29,7 @@ export default () => (
     <ul>
       <li><Link to="https://twitter.com/r_hayakasa">Twitter</Link></li>
       <li><Link to="https://facebook.com/hayakasa">Facebook</Link></li>
-      <li><Link to="https://tumblr.hyks.jp">tumblr</Link></li>
+      <li><Link to="http://tumblr.hyks.jp">tumblr</Link></li>
       <li><Link to="https://github.com/hayakasa">GitHub</Link></li>
       <li><Link to="https://instagram.com/hayakasa">Instagram</Link></li>
       <li><Link to="https://unsplash.com/@hayakasa">Unsplash</Link></li>
