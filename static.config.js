@@ -5,7 +5,7 @@ import { ServerStyleSheet } from 'styled-components'
 import collections from './public/collections.json'
 
 export default {
-  siteRoot: 'http://hyks.jp',
+  siteRoot: 'https://hyks.jp',
   getSiteData: () => ({
   }),
   getRoutes: async () => {
