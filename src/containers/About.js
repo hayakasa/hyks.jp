@@ -14,6 +14,7 @@ export default () => (
       title="about"
       meta={[
         {name: "description", content: `it's my portfolio website. you can see photographs i took`},
+        {property: "og:title", content: "about | Ryoji Hayasaka Portfolio"},
         {property: "og:url", content: `https://hyks.jp/about`},
         {property: "og:type", content: "article"}
       ]}

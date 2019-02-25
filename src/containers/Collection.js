@@ -26,6 +26,7 @@ export default withRouteData(({ id, title, collection }) => (
       title={title}
       meta={[
         {name: "description", content: `it's a collection of ${title} photographs i took.`},
+        {property: "og:title", content: `${title} | Ryoji Hayasaka Portfolio`},
         {property: "og:url", content: `https://hyks.jp/collection/${id}/`},
         {property: "og:type", content: "article"}
       ]}
