@@ -6,6 +6,9 @@ import collections from './public/collections.json'
 
 export default {
   siteRoot: 'https://hyks.jp',
+  plugins: [
+    ["react-static-plugin-google-analytics", {id: 'UA-35906821-6'}]
+  ],
   getSiteData: () => ({
   }),
   getRoutes: async () => {
