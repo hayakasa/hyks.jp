@@ -27,6 +27,8 @@ export default withRouteData(({ collections }) => (
       meta={[
         {name: "description", content: `it's my portfolio website. you can see photographs i took`},
         {property: "og:title", content: "home | Ryoji Hayasaka Portfolio"},
+        {property: "og:description", content: `it's my portfolio website. you can see photographs i took`},
+        {property: "og:image", content: "https://secure.gravatar.com/avatar/301071becdd1890fa7078cbe29ce83ba?s=400"},
         {property: "og:url", content: "https://hyks.jp"},
         {property: "og:type", content: "website"}
       ]}

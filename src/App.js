@@ -78,7 +78,7 @@ const App = () => (
         htmlAttributes={{lang: "en"}}
         titleTemplate="%s | Ryoji Hayasaka Portfolio"
         meta={[
-          {name: "twitter:card", content: "summary_large_image"},
+          {name: "twitter:card", content: "summary"},
           {name: "twitter:site", content: "@r_hayakasa"}
         ]}
       />

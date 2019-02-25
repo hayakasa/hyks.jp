@@ -13,8 +13,10 @@ export default () => (
     <Head
       title="about"
       meta={[
-        {name: "description", content: `it's my portfolio website. you can see photographs i took`},
+        {name: "description", content: `it's my portfolio website. my information is here`},
         {property: "og:title", content: "about | Ryoji Hayasaka Portfolio"},
+        {property: "og:description", content: `it's my portfolio website. my information is here`},
+        {property: "og:image", content: "https://secure.gravatar.com/avatar/301071becdd1890fa7078cbe29ce83ba?s=400"},
         {property: "og:url", content: `https://hyks.jp/about`},
         {property: "og:type", content: "article"}
       ]}
