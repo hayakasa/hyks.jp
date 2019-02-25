@@ -25,7 +25,6 @@ injectGlobal`
   }
   @media (max-width: 480px) {
     .site-title {
-      display: block;
       margin: .5rem 1rem;
       font-size: 1.3rem;
     }
