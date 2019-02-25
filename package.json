@@ -1,5 +1,5 @@
 {
-  "name": "react-static-starter",
+  "name": "hyks.jp",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,7 +7,8 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "fetch": "node fetch.js"
   },
   "dependencies": {
     "axios": "^0.16.2",

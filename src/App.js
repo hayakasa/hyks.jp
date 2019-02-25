@@ -1,59 +1,90 @@
 import React from 'react'
-import { Router, Link } from 'react-static'
+import { Router, Link, Head } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
-//
 import Routes from 'react-static-routes'
 
 injectGlobal`
+
+  @import url('https://fonts.googleapis.com/css?family=Faustina:400');
   body {
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
-      'Lucida Grande', sans-serif;
-    font-weight: 300;
+    font-family: 'Faustina', serif;
+    font-weight: 400;
     font-size: 16px;
+    letter-spacing: .07rem;
+    color: #e9845e;
     margin: 0;
     padding: 0;
+    background: #141312;
+  }
+  .site-title {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 1rem;
+    font-weight: 400;
+  }
+  @media (max-width: 480px) {
+    .site-title {
+      display: block;
+      margin: .5rem 1rem;
+      font-size: 1.3rem;
+    }
   }
 `
 
 const AppStyles = styled.div`
   a {
-    text-decoration: none;
-    color: #108db8;
-    font-weight: bold;
+    color: #e9845e;
   }
 
   nav {
+    background: rgba(20,19,18,0.9);
+    display: block;
     width: 100%;
-    background: #108db8;
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
     a {
-      color: white;
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: inline-block;
+    }
+    @media (max-width: 480px) {
+      a {
+        padding: 1rem;
+      }
     }
   }
 
   .content {
-    padding: 1rem;
-  }
+    margin: 0 auto 100px;
+    padding: 0 1rem;
 
+    a {
+      display: block;
+      padding-top: 1rem;
+    }  
+  }
+  
   img {
-    max-width: 100%;
+    width: 100%;
   }
 `
 
 const App = () => (
   <Router>
     <AppStyles>
+      <Head
+        htmlAttributes={{lang: "en"}}
+        titleTemplate="%s | Ryoji Hayasaka Portfolio"
+      />
       <nav>
+        <span className="site-title">Ryoji Hayasaka</span>
         <Link exact to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
       </nav>
-      <div className="content">
+      <main className="content">
         <Routes />
-      </div>
+      </main>
     </AppStyles>
   </Router>
 )

@@ -2,34 +2,33 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
+import collections from './public/collections.json'
+
 export default {
+  siteRoot: 'http://hyks.jp',
   getSiteData: () => ({
-    title: 'React Static',
   }),
   getRoutes: async () => {
-    const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    // const { data: collections } = await axios.get('http://127.0.0.1:3000/collection.json')
     return [
       {
         path: '/',
         component: 'src/containers/Home',
+        getData: () => ({
+          collections: collections
+        }),
+        children: collections.map(item => ({
+          path: `/collection/${item.id}`,
+          component: 'src/containers/Collection',
+          getData: () => ({
+            title: item.title,
+            collection: require(`./public/collection_${item.id}.json`),
+          }),
+        })),
       },
       {
         path: '/about',
         component: 'src/containers/About',
-      },
-      {
-        path: '/blog',
-        component: 'src/containers/Blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
       },
       {
         is404: true,
