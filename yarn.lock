@@ -6894,11 +6894,6 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-static-plugin-google-analytics@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/react-static-plugin-google-analytics/-/react-static-plugin-google-analytics-0.0.0.tgz#882b73a18575cceeea116b4fdd5db098c2a0c84b"
-  integrity sha512-wjr9HMAjjxr9UYJJzT2J9dTlmb4KETMraz8fPRn+d4RRR6/FhJLVMb5RYjP/gRw1eSyfgS/7dOwx/RUHanzjug==
-
 react-static@^5.9.12:
   version "5.9.12"
   resolved "https://registry.yarnpkg.com/react-static/-/react-static-5.9.12.tgz#4dd5e24b9fa53531c2ccbe966c4223f8b6d0d1bc"
