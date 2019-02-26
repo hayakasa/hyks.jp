@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Router, Link, Head } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-35906821-6');
 injectGlobal`
 
   @import url('https://fonts.googleapis.com/css?family=Faustina:400');
@@ -70,28 +72,37 @@ const AppStyles = styled.div`
   }
 `
 
-const App = () => (
-  <Router>
-    <AppStyles>
-      <Head
-        htmlAttributes={{lang: "en", prefix: "og: http://ogp.me/ns#"}}
-        titleTemplate="%s | Ryoji Hayasaka Portfolio"
-        meta={[
-          {name: "twitter:card", content: "summary"},
-          {name: "twitter:site", content: "@r_hayakasa"},
-          {property: "fb:app_id", content: "551655515340796"}
-        ]}
-      />
-      <nav>
-        <span className="site-title">Ryoji Hayasaka</span>
-        <Link exact to="/">Home</Link>
-        <Link to="/about/">About</Link>
-      </nav>
-      <main className="content">
-        <Routes />
-      </main>
-    </AppStyles>
-  </Router>
-)
+class App extends Component {
+  componentDidMount() {
+    // const { pathname } = this.props.location;
+    ReactGA.set({ page: this.props.location });
+    ReactGA.pageview(this.props.location);
+  }
+  render () {
+    return(
+      <Router>
+        <AppStyles>
+          <Head
+            htmlAttributes={{lang: "en", prefix: "og: http://ogp.me/ns#"}}
+            titleTemplate="%s | Ryoji Hayasaka Portfolio"
+            meta={[
+              {name: "twitter:card", content: "summary"},
+              {name: "twitter:site", content: "@r_hayakasa"},
+              {property: "fb:app_id", content: "551655515340796"}
+            ]}
+          />
+          <nav>
+            <span className="site-title">Ryoji Hayasaka</span>
+            <Link exact to="/">Home</Link>
+            <Link to="/about/">About</Link>
+          </nav>
+          <main className="content">
+            <Routes />
+          </main>
+        </AppStyles>
+      </Router>
+    )
+  }
+}
 
 export default hot(module)(App)
