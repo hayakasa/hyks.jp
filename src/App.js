@@ -4,9 +4,9 @@ import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 import ReactGA from 'react-ga'
-import createBrowserHistory from 'history/createBrowserHistory'
+import createMemoryHistory from 'history/createMemoryHistory'
 
-const history = createBrowserHistory()
+const history = createMemoryHistory()
 history.listen(({ pathname }) => {
   ReactGA.set({ page: pathname })
   ReactGA.pageview(pathname)
