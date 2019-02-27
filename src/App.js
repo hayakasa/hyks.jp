@@ -3,9 +3,15 @@ import { Router, Link, Head } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-ReactGA.initialize('UA-35906821-6');
+const history = createBrowserHistory()
+history.listen(({ pathname }) => {
+  ReactGA.set({ page: pathname })
+  ReactGA.pageview(pathname)
+});
+
 injectGlobal`
 
   @import url('https://fonts.googleapis.com/css?family=Faustina:400');
@@ -74,13 +80,13 @@ const AppStyles = styled.div`
 
 class App extends Component {
   componentDidMount() {
-    // const { pathname } = this.props.location;
-    ReactGA.set({ page: this.props.location });
-    ReactGA.pageview(this.props.location);
+    const pathname = window.location.pathname + window.location.search
+    ReactGA.set({ page: pathname })
+    ReactGA.pageview(pathname)
   }
   render () {
     return(
-      <Router>
+      <Router history={history}>
         <AppStyles>
           <Head
             htmlAttributes={{lang: "en", prefix: "og: http://ogp.me/ns#"}}
