@@ -1,16 +1,36 @@
 import React, { Component } from 'react'
-import { Router, Link, Head } from 'react-static'
+import { Router, Link, Head, Route } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 import ReactGA from 'react-ga'
-import createHistory from 'history/createBrowserHistory'
 
-const history = createHistory()
-history.listen(({ pathname }) => {
-  ReactGA.set({ page: pathname })
-  ReactGA.pageview(pathname)
-});
+class LogPageView extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      initialised: false,
+      hasWindow: false,
+    }
+  }
+  componentWillMount () {
+    this.setState({
+      initialised: true,
+    })
+  }
+  componentDidMount () {
+    this.setState({
+      hasWindow: true,
+    })
+  }
+  render () {
+    if (this.state.initialised && this.state.hasWindow) {
+      ReactGA.set({ page: window.location.pathname })
+      ReactGA.pageview(window.location.pathname)
+    }
+    return null
+  }
+}
 
 injectGlobal`
 
@@ -79,14 +99,14 @@ const AppStyles = styled.div`
 `
 
 class App extends Component {
-  componentDidMount() {
-    const pathname = window.location.pathname + window.location.search
-    ReactGA.set({ page: pathname })
-    ReactGA.pageview(pathname)
-  }
+  // componentDidMount() {
+  //   const pathname = window.location.pathname + window.location.search
+  //   ReactGA.set({ page: pathname })
+  //   ReactGA.pageview(pathname)
+  // }
   render () {
     return(
-      <Router history={history}>
+      <Router>
         <AppStyles>
           <Head
             htmlAttributes={{lang: "en", prefix: "og: http://ogp.me/ns#"}}
@@ -97,6 +117,7 @@ class App extends Component {
               {property: "fb:app_id", content: "551655515340796"}
             ]}
           />
+          <Route path="/" component={LogPageView} />
           <nav>
             <span className="site-title">Ryoji Hayasaka</span>
             <Link exact to="/">Home</Link>

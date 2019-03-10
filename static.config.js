@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -9,7 +8,6 @@ export default {
   getSiteData: () => ({
   }),
   getRoutes: async () => {
-    // const { data: collections } = await axios.get('http://127.0.0.1:3000/collection.json')
     return [
       {
         path: '/',
