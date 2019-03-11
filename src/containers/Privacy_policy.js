@@ -23,7 +23,7 @@ export default () => (
     <h1>privacy policy</h1>
     <h2>Purpose of using personal information</h2>
     <p>
-      This website includes Google Analytics, collects your access data which does not enable the identification of the specific individual. Google Analytics uses Cookie in order to collect your access data. You can refuse this behavior by disabling cookies.<br/>
+      This website includes Google Analytics, collects your access data which does not enable the identification of the specific individual. Google Analytics uses Cookie in order to collect your access data. You can refuse this behavior by disabling Cookie.<br/>
       For details on this policy, please click <Link to="https://www.google.com/analytics/terms/">HERE</Link>.
     </p>
   </PrivacyStyles>
