@@ -120,6 +120,7 @@ class App extends Component {
               {name: "twitter:card", content: "summary"},
               {name: "twitter:site", content: "@r_hayakasa"},
               {property: "fb:app_id", content: "551655515340796"}
+              {name: "google-site-verification", content: "stBLSAKsdNkeuX_D2_maEbxHvAVIw6uZb7VOiokLRnQ"}
             ]}
           />
           <Route path="/" component={LogPageView} />
