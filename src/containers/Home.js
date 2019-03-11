@@ -17,7 +17,9 @@ const HomeStyles = styled.div`
   
   a {
     break-inside: avoid;
-  }
+    display: block;
+    padding-top: 1rem;
+  }  
 `
 
 export default withRouteData(({ collections }) => (

@@ -30,6 +30,10 @@ export default {
         component: 'src/containers/About',
       },
       {
+        path: '/privacy_policy',
+        component: 'src/containers/Privacy_policy',
+      },
+      {
         is404: true,
         component: 'src/containers/404',
       },

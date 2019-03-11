@@ -16,6 +16,8 @@ const CollectionStyles = styled.div`
   }
   
   a {
+    display: block;
+    padding-top: 1rem;
     break-inside: avoid;
   }
 `;

@@ -75,6 +75,11 @@ const AppStyles = styled.div`
       padding: 1rem 2rem;
       display: inline-block;
     }
+    .privacy_policy {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
     @media (max-width: 480px) {
       a {
         padding: 1rem;
@@ -85,16 +90,16 @@ const AppStyles = styled.div`
   .content {
     margin: 0 auto 100px;
     padding: 0 1rem;
-
-    a {
-      display: block;
-      padding-top: 1rem;
-    }  
   }
   
   img {
     width: 100%;
     height: auto;
+  }
+  .info {
+    width: 65%;
+    margin: 0 auto;
+    display: block;
   }
 `
 
@@ -120,8 +125,9 @@ class App extends Component {
           <Route path="/" component={LogPageView} />
           <nav>
             <span className="site-title">Ryoji Hayasaka</span>
-            <Link exact to="/">Home</Link>
-            <Link to="/about/">About</Link>
+            <Link exact to="/">home</Link>
+            <Link to="/about/">about</Link>
+            <Link to="/privacy_policy/" className="privacy_policy"><img className="info" src="/OOjs_UI_icon_info_big-invert.svg"/></Link>
           </nav>
           <main className="content">
             <Routes />
