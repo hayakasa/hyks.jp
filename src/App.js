@@ -24,7 +24,7 @@ class LogPageView extends React.Component {
     })
   }
   render () {
-    if (this.state.initialised && this.state.hasWindow) {
+    if (process.env.NODE_ENV === "production" && this.state.initialised && this.state.hasWindow) {
       ReactGA.set({ page: window.location.pathname })
       ReactGA.pageview(window.location.pathname)
     }
