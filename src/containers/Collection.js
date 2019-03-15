@@ -44,8 +44,6 @@ export default withRouteData(({ id, title, collection }) => (
         <img
           src={photo.urls.regular}
           alt={photo.description}
-          width={photo.width}
-          height={photo.height}
         />
       </Link>
     ))}

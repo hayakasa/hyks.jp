@@ -43,8 +43,6 @@ export default withRouteData(({ collections }) => (
         <img
           src={item.cover_photo.urls.regular}
           alt={`${item.title} cover photo`}
-          width={item.cover_photo.width}
-          height={item.cover_photo.height}
         />
         <h2>{item.title}</h2>
       </Link>
