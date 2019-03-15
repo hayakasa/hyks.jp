@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouteData, Link, Head } from 'react-static'
 import styled from 'styled-components'
+import LazyLoad from 'react-lazyload'
 
 const CollectionStyles = styled.div`
   column-count: 2;
@@ -41,12 +42,17 @@ export default withRouteData(({ id, title, collection }) => (
         key={photo.id}
         to={`https://unsplash.com/photos/${photo.id}`}
       >
-        <img
-          src={photo.urls.regular}
-          alt={photo.description}
+        <LazyLoad
           width={photo.width}
           height={photo.height}
-        />
+        >
+          <img
+            src={photo.urls.regular}
+            alt={photo.description}
+            width={photo.width}
+            height={photo.height}
+          />
+        </LazyLoad>
       </Link>
     ))}
   </CollectionStyles>
