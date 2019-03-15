@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouteData, Link, Head } from 'react-static'
 import styled from 'styled-components'
-import LazyLoad from 'react-lazyload'
 
 const HomeStyles = styled.div`
   column-count: 2;
@@ -41,17 +40,12 @@ export default withRouteData(({ collections }) => (
         key={item.id}
         to={`/collection/${item.id}/`}
       >
-        <LazyLoad
+        <img
+          src={item.cover_photo.urls.regular}
+          alt={`${item.title} cover photo`}
           width={item.cover_photo.width}
           height={item.cover_photo.height}
-        >
-          <img
-            src={item.cover_photo.urls.regular}
-            alt={`${item.title} cover photo`}
-            width={item.cover_photo.width}
-            height={item.cover_photo.height}
-          />
-        </LazyLoad>
+        />
         <h2>{item.title}</h2>
       </Link>
     ))}
