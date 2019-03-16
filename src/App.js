@@ -3,34 +3,7 @@ import { Router, Link, Head, Route } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
-import ReactGA from 'react-ga'
-
-class LogPageView extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      initialised: false,
-      hasWindow: false,
-    }
-  }
-  componentWillMount () {
-    this.setState({
-      initialised: true,
-    })
-  }
-  componentDidMount () {
-    this.setState({
-      hasWindow: true,
-    })
-  }
-  render () {
-    if (this.state.initialised && this.state.hasWindow) {
-      ReactGA.set({ page: window.location.pathname })
-      ReactGA.pageview(window.location.pathname)
-    }
-    return null
-  }
-}
+import GA from 'GA'
 
 injectGlobal`
 
@@ -71,6 +44,7 @@ const AppStyles = styled.div`
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
     a {
       padding: 1rem 2rem;
       display: inline-block;
@@ -104,11 +78,6 @@ const AppStyles = styled.div`
 `
 
 class App extends Component {
-  // componentDidMount() {
-  //   const pathname = window.location.pathname + window.location.search
-  //   ReactGA.set({ page: pathname })
-  //   ReactGA.pageview(pathname)
-  // }
   render () {
     return(
       <Router>
@@ -123,7 +92,7 @@ class App extends Component {
               {name: "google-site-verification", content: "stBLSAKsdNkeuX_D2_maEbxHvAVIw6uZb7VOiokLRnQ"}
             ]}
           />
-          <Route path="/" component={LogPageView} />
+          <Route path="/" component={GA} />
           <nav>
             <span className="site-title">Ryoji Hayasaka</span>
             <Link exact to="/">home</Link>

@@ -1,8 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReactGA from 'react-ga'
-
-ReactGA.initialize('UA-35906821-6')
 
 // Your top level component
 import App from './App'
