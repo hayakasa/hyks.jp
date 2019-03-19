@@ -10,6 +10,17 @@ const AboutStyles = styled.div`
   
   ul {
     padding-left: 1.1rem;
+    li {
+      padding: .3rem 0;
+    }
+  }
+
+  h3 {
+    margin-bottom: .5rem;
+  }
+  .pixela {
+    max-width: 400px;
+    background: white;
   }
 `
 export default () => (
@@ -39,5 +50,7 @@ export default () => (
       <li><Link to="https://unsplash.com/@hayakasa">Unsplash</Link></li>
       <li><Link to="https://500px.com/ryojihayasaka">500px</Link></li>
     </ul>
+    <h3>my photo shoot counts</h3>
+    <object className="pixela" type="image/svg+xml" data="https://pixe.la/v1/users/hayakasa/graphs/photo-shoots"/>
   </AboutStyles>
 )
