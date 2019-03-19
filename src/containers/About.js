@@ -8,7 +8,11 @@ const AboutStyles = styled.div`
     width: 50%;
   }
   
+  p {
+    margin: 2rem 0;
+  }
   ul {
+    margin: 2rem 0;
     padding-left: 1.1rem;
     li {
       padding: .3rem 0;
