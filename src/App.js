@@ -30,6 +30,10 @@ injectGlobal`
       font-size: 1.3rem;
     }
   }
+  .imageLink {
+    display: block;
+    break-inside: avoid;
+  }
 `
 
 const AppStyles = styled.div`

@@ -15,12 +15,6 @@ const CollectionStyles = styled.div`
     margin-bottom: 0;
     font-weight: 400;
   }
-  
-  a {
-    display: block;
-    padding-top: 1rem;
-    break-inside: avoid;
-  }
 `;
 
 export default withRouteData(({ id, title, collection }) => (
@@ -41,8 +35,15 @@ export default withRouteData(({ id, title, collection }) => (
       <Link
         key={photo.id}
         to={`https://unsplash.com/photos/${photo.id}`}
+        className="imageLink"
       >
-        <Photo resource={photo}/>
+        <Photo
+          src={photo.urls.regular}
+          alt={photo.description}
+          placeholder={photo.color}
+          width={photo.width}
+          height={photo.height}
+        />
       </Link>
     ))}
   </CollectionStyles>
