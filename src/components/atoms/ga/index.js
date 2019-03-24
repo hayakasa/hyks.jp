@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component }from 'react'
 import ReactGA from 'react-ga'
 
-class GA extends React.Component {
+class GA extends Component {
   constructor () {
     super()
     ReactGA.initialize('UA-35906821-6')

@@ -11,12 +11,6 @@ const unsplash = new Unsplash({
     secret: process.env.UNSPLASH_APP_SECRET
 });
 
-// unsplash.users.photos("hayakasa", 1, 100, "popular", false)
-//     .then(toJson)
-//     .then(json => {
-//       fs.writeFileSync('src/photos.json', JSON.stringify(json));
-//     });
-
 unsplash.users.collections("hayakasa")
     .then(toJson)
     .then(json => {
