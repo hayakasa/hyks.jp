@@ -3,7 +3,7 @@ import { Router, Link, Head, Route } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
-import GA from 'GA'
+import GA from './components/atoms/ga'
 
 injectGlobal`
 
