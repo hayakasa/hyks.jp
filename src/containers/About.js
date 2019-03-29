@@ -2,6 +2,8 @@ import React from 'react'
 import { Head, Link } from 'react-static'
 import styled from 'styled-components'
 
+import pixelaGraph from '../../public/photo-shoots.svg'
+
 const AboutStyles = styled.div`
   .profile_image {
     max-width: 300px;
@@ -55,6 +57,6 @@ export default () => (
       <li><Link to="https://500px.com/ryojihayasaka">500px</Link></li>
     </ul>
     <h3>my photo shoot counts</h3>
-    <object className="pixela" type="image/svg+xml" data="https://pixe.la/v1/users/hayakasa/graphs/photo-shoots"/>
+    <object className="pixela" type="image/svg+xml" data={pixelaGraph}/>
   </AboutStyles>
 )

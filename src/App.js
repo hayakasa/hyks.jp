@@ -5,6 +5,8 @@ import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 import GA from './components/atoms/ga'
 
+import infoIcon from '../public/OOjs_UI_icon_info_big-invert.svg'
+
 injectGlobal`
 
   @import url('https://fonts.googleapis.com/css?family=Faustina:400');
@@ -101,7 +103,7 @@ class App extends Component {
             <span className="site-title">Ryoji Hayasaka</span>
             <Link exact to="/">home</Link>
             <Link to="/about/">about</Link>
-            <Link to="/privacy_policy/" className="privacy_policy"><img className="info" src="/OOjs_UI_icon_info_big-invert.svg"/></Link>
+            <Link to="/privacy_policy/" className="privacy_policy"><img className="info" src={infoIcon}/></Link>
           </nav>
           <main className="content">
             <Routes />
