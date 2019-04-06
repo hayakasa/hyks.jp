@@ -44,7 +44,7 @@ export default () => (
     />
     <h1>about</h1>
     <div>
-      <img className="profile_image" alt="my portrait" src="https://secure.gravatar.com/avatar/301071becdd1890fa7078cbe29ce83ba?s=400" />
+      <img className="profile_image" alt="my portrait" decoding="async" src="https://secure.gravatar.com/avatar/301071becdd1890fa7078cbe29ce83ba?s=400" />
     </div>
     <p>Living in japan as a programmer, or a photographer.</p>
     <ul>

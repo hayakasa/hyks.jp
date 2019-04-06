@@ -41,6 +41,7 @@ class Photo extends Component {
               ref={measureRef}
             >
               <SimpleImg
+                decoding="async"
                 src={src}
                 alt={alt}
                 placeholder={placeholder}
