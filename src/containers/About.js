@@ -2,7 +2,7 @@ import React from 'react'
 import { Head, Link } from 'react-static'
 import styled from 'styled-components'
 
-import pixelaGraph from '../../public/photo-shoots.svg'
+// import pixelaGraph from '../../public/photo-shoots.svg'
 
 const AboutStyles = styled.div`
   .profile_image {
