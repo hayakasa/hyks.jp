@@ -18,7 +18,7 @@ injectGlobal`
     color: #e9845e;
     margin: 0;
     padding: 0;
-    background: #141312;
+    background: #000009;
   }
   .site-title {
     font-size: 1.5rem;
@@ -44,7 +44,7 @@ const AppStyles = styled.div`
   }
 
   nav {
-    background: rgba(20,19,18,0.9);
+    background: rgba(0,0,9,0.9);
     display: block;
     width: 100%;
     position: fixed;
