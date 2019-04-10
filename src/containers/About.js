@@ -57,6 +57,6 @@ export default () => (
       <li><Link to="https://500px.com/ryojihayasaka">500px</Link></li>
     </ul>
     <h3>my photo shoot counts</h3>
-    <object className="pixela" type="image/svg+xml" data={pixelaGraph}/>
+    <object className="pixela" type="image/svg+xml" data="https://pixe.la/v1/users/hayakasa/graphs/photo-shoots"/>
   </AboutStyles>
 )
